@@ -1,0 +1,99 @@
+.todo_main_area {
+  background: deepskyblue;
+  width: 80%;
+  border-radius: 5px;
+  margin: 100 auto;
+}
+
+.todo_title_area {
+  width: 100%;
+}
+
+.todo_title_item {
+  font-size: 20px;
+  font-weight: bold;
+  padding-top: 10px;
+  margin-left: 30px;
+}
+
+.todo_add_area {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.todo_add_area td {
+  text-align: center;
+}
+
+.todo_input_item {
+  width: 80%;
+  padding: 10px 5px;
+}
+
+.todo_add_button {
+  font-size: 15px;
+  background: white;
+  border: 0.5px solid blue;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.todo_add_button:hover {
+  opacity: 0.7;
+  cursor: hand;
+  background: red;
+  color: white;
+  transition-duration: 1s;
+}
+
+.todo_all_area {
+  width: 80%;
+  margin: 30 auto 0;
+  padding-bottom: 30px;
+}
+
+.todo_all_table {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.todo_all_area td {
+  text-align: center;
+}
+
+.todo_all_input_item {
+  padding: 10px 5px;
+  width: 100%;
+}
+
+.todo_all_update_button_item {
+  font-size: 15px;
+  background: white;
+  border: 0.5px solid blue;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.todo_all_update_button_item:hover {
+  opacity: 0.7;
+  cursor: hand;
+  background: red;
+  color: white;
+  transition-duration: 1s;
+}
+
+.todo_all_delete_button_item {
+  font-size: 15px;
+  background: white;
+  border: 0.5px solid blue;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.todo_all_delete_button_item:hover {
+  opacity: 0.7;
+  cursor: hand;
+  background: red;
+  color: white;
+  transition-duration: 1s;
+}

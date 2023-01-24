@@ -1,0 +1,21 @@
+.pagination {
+  display: flex;
+  background: white;
+  width: 50%;
+  margin: 30 auto;
+}
+
+li {
+  list-style-type: none;
+  margin: 5px;
+  padding: 5px;
+  font-size: 16px;
+}
+
+li:hover {
+  opacity: 0.7;
+  cursor: hand;
+  background: red;
+  color: white;
+  transition-duration: 1s;
+}
