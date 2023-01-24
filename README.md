@@ -10,7 +10,8 @@
 - 必要なくなったら削除できる。 
   
 ## 環境  
-- Laravel8.*    
+- Laravel8.*  
+- Laravel Breeze  
 - MySQL  
 - PHP  
 - HTML  
@@ -22,6 +23,7 @@
 - 更新機能  
 - 削除機能  
 - ページネーション  
+- 認証機能
   
 ## 作成手順  
 01. VScode 使用　　
@@ -52,5 +54,12 @@
 25. Pagination 実装  (php artisan vendor:publish --tag=laravel-pagination)
 26. TodoController (index) 記述  
 27. CSS作成  
+28. web.php 書き換わるからメモしておく  
+29. Node.js インストール(ホームページでダウンロード)  
+30. laravel/breeze インストール(ターミナル)  
+31. プロンプトでnode --version 確認
+32. プロンプトでnpm install　(npm --version 確認)  
+33. プロンプトでnpm run dev  
+
 
 
