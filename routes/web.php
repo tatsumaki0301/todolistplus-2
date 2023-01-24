@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TodoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,8 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+
+Route::get('/home', [TodoController::class, 'index']);
+Route::post('/home/add', [TodoController::class, 'create']);
+Route::post('/home/update', [TodoController::class, 'update']);
+Route::post('/home/delete', [TodoController::class, 'delete']);
