@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\TodoRequest;
 use App\Models\Todo;
 use App\Models\User;
 use App\Models\Tag;
-use App\Http\Requests\TodoRequest;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Auth;
 
-class TodoController extends Controller
+class FindController extends Controller
 {
     public function index()
     {
@@ -28,24 +28,37 @@ class TodoController extends Controller
             'todo' => $todo,
         ];
 
-        return view('index', $param);
+        return view('find', $param);
     }
 
-    public function create(TodoRequest $request)
+    public function search(Request $request)
     {
-        $content = $request->content;
-        $user_id = $request->user_id;
+        $user = Auth::user();
+        $id = Auth::id();
+        $tags = Tag::get();
+        $todos = Todo::get();
+
+        $search = $request->content;
         $tag_id = $request->tag_id;
 
-        $form = [
-            'content' => $content,
-            'user_id' => $user_id,
-            'tag_id' => $tag_id,
+        $query = Todo::query();
+        if ($search) {
+            $query->where('content', 'LIKE BINARY', "%{$search}%")->get();
+        }
+        elseif ($search == null && $tag_id) {
+            $query->where('tag_id', '=', $tag_id)->get();
+        }
+
+        $todos = $query->paginate(5);
+
+        $param = [
+            'todos' => $todos,
+            'user' => $user,
+            'tags' => $tags,
+            'id' => $id,
         ];
 
-        Todo::create($form);
-
-        return redirect('/');
+        return view('find', $param);
     }
 
     public function update(TodoRequest $request)
@@ -64,7 +77,7 @@ class TodoController extends Controller
         
         Todo::where('id', $todo_id)->update($form);
 
-        return redirect('/');
+        return redirect('/find');
     }
 
     public function delete(Request $request)
@@ -73,7 +86,8 @@ class TodoController extends Controller
 
         Todo::find($delete_id)->delete();
 
-        return redirect('/');
+        return redirect('/find');
     }
+
 
 }

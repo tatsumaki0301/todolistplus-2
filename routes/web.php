@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TodoController;
+use App\Http\Controllers\FindController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,10 @@ Route::post('/add', [TodoController::class, 'create']);
 Route::post('/update', [TodoController::class, 'update']);
 Route::post('/delete', [TodoController::class, 'delete']);
 
+Route::get('/find', [FindController::class, 'index']);
+Route::post('/find/search', [FindController::class, 'search']);
+Route::post('/find/update', [FindController::class, 'update']);
+Route::post('/find/delete', [FindController::class, 'delete']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

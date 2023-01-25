@@ -1,6 +1,6 @@
 @extends('layouts.default')
 <head>
-  <link rel="stylesheet" href="/css/index.css" >
+  <link rel="stylesheet" href="/css/find.css" >
 </head>
 @section('title', 'TodoList')
 
@@ -19,29 +19,25 @@
       @endif
     </div>
     @auth
-    <div class="find_button_area">
-      <button class="find_button"><a href="/find">検索ページ</a></button>
-    </div>
     <table class="todo_add_area">
       <tr>
-        <th></th>
         <th>内容</th>
         <th>タグ</th>
         <th>追加</th>
       </tr>
-    <form action="/add" method="POST">
+    <form action="/find/search" method="POST">
       @csrf
       <tr>
-        <td><input type="hidden" name="user_id" value="{{$id}}"/></td>
-        <td><input type="text" name="content" class="todo_input_item" required/></td>
+        <td><input type="search" name="content" value="@if (isset($search)) {{$search}} @endif" class="todo_input_item"/></td>
         <td>
           <select name="tag_id">
+            <option></option>
             @foreach($tags as $tag)
             <option value="{{$tag->id}}">{{$tag->name}}</option>
             @endforeach
           </select>
         </td>
-        <td><button class="todo_add_button">追加</button></td>
+        <td><button class="todo_add_button">検索</button></td>
       </tr>
     </form>
     </table>
@@ -61,7 +57,7 @@
     @endauth
     @foreach($todos as $todo)
       <tr>
-      <form action="/update" method="POST">
+      <form action="/find/update" method="POST">
         @csrf
         <td><input type="hidden" name="id" value="{{$todo->id}}" /></td>
         <td><input type="hidden" name="user_id" value="{{$id}}" /></td>
@@ -74,7 +70,7 @@
         </select></td>
         <td><button class="todo_all_update_button_item">更新</buttom></td>
       </form>
-      <form action="/delete" method="POST">
+      <form action="/find/delete" method="POST">
         @csrf
         <td><input type="hidden" name="deleteId" value="{{$todo->id}}" /></td>
         <td><button class="todo_all_delete_button_item">削除</button></td>
@@ -82,7 +78,10 @@
       </tr>
     @endforeach
     </table>
-  {{ $todos->links('vendor.pagination.default')}}
+    {{ $todos->links('vendor.pagination.default')}}
+  </div>
+  <div class="return_button_area">
+    <button class="return_button"><a href="/">戻る</a></button>
   </div>
 </div>
 @endsection

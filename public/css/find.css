@@ -18,12 +18,12 @@
   margin-left: 30px;
 }
 
-.user_name{
+.user_name {
   padding-top: 15px;
   margin-right: 30px;
 }
 
-.logout_button{
+.logout_button {
   font-size: 15px;
   background: white;
   border: 0.5px solid blue;
@@ -46,27 +46,6 @@
 
 .todo_add_area td {
   text-align: center;
-}
-
-.find_button_area {
-  width: 90%;
-  margin: 0 auto;
-}
-
-.find_button{
-  font-size: 15px;
-  background: white;
-  border: 0.5px solid blue;
-  border-radius: 5px;
-  padding: 5px 10px;
-}
-
-.find_button:hover {
-  opacity: 0.7;
-  cursor: hand;
-  background: red;
-  color: white;
-  transition-duration: 1s;
 }
 
 .todo_input_item {
@@ -135,6 +114,28 @@
 }
 
 .todo_all_delete_button_item:hover {
+  opacity: 0.7;
+  cursor: hand;
+  background: red;
+  color: white;
+  transition-duration: 1s;
+}
+
+.return_button_area{
+  width: 80%;
+  margin: 0 auto;
+}
+
+.return_button{
+  margin: -20px auto 20;
+  font-size: 15px;
+  background: white;
+  border: 0.5px solid blue;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.return_button:hover {
   opacity: 0.7;
   cursor: hand;
   background: red;
