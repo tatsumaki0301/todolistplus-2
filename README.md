@@ -64,4 +64,7 @@
 34. ユーザー名、登録、ログイン、ログアウト機能 トップページへ追加  
 35. 登録、ログイン、ログアウト後のルート先変更  
 36. ユーザーごとの表示調整  blade,Controller,Model(リレーション追加)  
+37. タグ追加 (Model, maigration, seeder)  
+38. index.blade.php , TodoController　修正  
+
 
