@@ -36,7 +36,7 @@ class FindController extends Controller
         $user = Auth::user();
         $id = Auth::id();
         $tags = Tag::get();
-        $todos = Todo::where('user_id', '=', $id)->with('user','tag')->paginate(5);
+        $todos = Todo::where('user_id', '=', $id)->with('user','tag')->get();
 
         $search = $request->content;
         $tag_id = $request->tag_id;
@@ -52,7 +52,7 @@ class FindController extends Controller
             $query->where('user_id', '=', $id)->get();
         }
 
-        $todos = $query->paginate(5);
+        $todos = $query->get();
 
         $param = [
             'todos' => $todos,

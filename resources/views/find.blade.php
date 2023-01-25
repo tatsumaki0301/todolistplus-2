@@ -19,6 +19,9 @@
       @endif
     </div>
     @auth
+    <div class="return_button_area">
+      <button class="return_button"><a href="/">戻る</a></button>
+    </div>
     <table class="todo_add_area">
       <tr>
         <th>内容</th>
@@ -78,10 +81,6 @@
       </tr>
     @endforeach
     </table>
-    {{ $todos->links('vendor.pagination.default')}}
-  </div>
-  <div class="return_button_area">
-    <button class="return_button"><a href="/">戻る</a></button>
   </div>
 </div>
 @endsection
