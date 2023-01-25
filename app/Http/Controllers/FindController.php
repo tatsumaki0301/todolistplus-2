@@ -36,17 +36,20 @@ class FindController extends Controller
         $user = Auth::user();
         $id = Auth::id();
         $tags = Tag::get();
-        $todos = Todo::get();
+        $todos = Todo::where('user_id', '=', $id)->with('user','tag')->paginate(5);
 
         $search = $request->content;
         $tag_id = $request->tag_id;
 
         $query = Todo::query();
         if ($search) {
-            $query->where('content', 'LIKE BINARY', "%{$search}%")->get();
+            $query->where('content', 'LIKE BINARY', "%{$search}%")->where('user_id', '=', $id)->get();
         }
         elseif ($search == null && $tag_id) {
-            $query->where('tag_id', '=', $tag_id)->get();
+            $query->where('tag_id', '=', $tag_id)->where('user_id', '=', $id)->get();
+        }
+        elseif ($search == null && $tag_id == null) {
+            $query->where('user_id', '=', $id)->get();
         }
 
         $todos = $query->paginate(5);
