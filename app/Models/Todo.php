@@ -12,10 +12,16 @@ class Todo extends Model
     protected $fillable = [
         'content',
         'user_id',
+        'tag_id',
     ];
 
-    public function users()
+    public function user()
     {
         return $this->belongsTo('App\Models\User');
+    }
+
+    public function tag()
+    {
+        return $this->belongsTo('App\Models\Tag');
     }
 }
