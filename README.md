@@ -66,5 +66,9 @@
 36. ユーザーごとの表示調整  blade,Controller,Model(リレーション追加)  
 37. タグ追加 (Model, maigration, seeder)  
 38. index.blade.php , TodoController　修正  
+39. 検索画面追加  
+40. FindController追加  
+41. 検索ロジック作成  
+42. CSS作成  
 
 
