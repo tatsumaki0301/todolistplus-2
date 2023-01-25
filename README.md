@@ -70,11 +70,13 @@
 37. ユーザーごとの表示調整  blade,Controller,Model(リレーション追加)  
 38. タグ追加 (Model, maigration, seeder)  
 39. todosテーブルに tag_id 追加し seed 実施無くす  
-40. TagsTableSeeder実施
-41. index.blade.php , TodoController　修正  
-42. 検索画面追加  
-43. FindController追加  
-44. 検索ロジック作成 (ユーザーごとの表示＋内容あいまい検索＋タグ検索)  
-45. CSS作成  
+40. todosテーブルより前にtagsテーブルが出来るようにする  
+41. php artisan migrate:fresh 実施  
+42. TagsTableSeeder実施
+43. index.blade.php , TodoController　修正  
+44. 検索画面追加  
+45. FindController追加  
+46. 検索ロジック作成 (ユーザーごとの表示＋内容あいまい検索＋タグ検索)  
+47. CSS作成  
 
 
