@@ -14,9 +14,11 @@ use App\Http\Controllers\TodoController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [TodoController::class, 'index']);
+Route::post('/add', [TodoController::class, 'create']);
+Route::post('/update', [TodoController::class, 'update']);
+Route::post('/delete', [TodoController::class, 'delete']);
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -24,7 +26,3 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('/home', [TodoController::class, 'index']);
-Route::post('/home/add', [TodoController::class, 'create']);
-Route::post('/home/update', [TodoController::class, 'update']);
-Route::post('/home/delete', [TodoController::class, 'delete']);

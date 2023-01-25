@@ -7,6 +7,8 @@
 
 .todo_title_area {
   width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .todo_title_item {
@@ -14,6 +16,27 @@
   font-weight: bold;
   padding-top: 10px;
   margin-left: 30px;
+}
+
+.user_name{
+  padding-top: 15px;
+  margin-right: 30px;
+}
+
+.logout_button{
+  font-size: 15px;
+  background: white;
+  border: 0.5px solid blue;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.logout_button:hover {
+  opacity: 0.7;
+  cursor: hand;
+  background: red;
+  color: white;
+  transition-duration: 1s;
 }
 
 .todo_add_area {

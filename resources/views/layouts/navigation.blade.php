@@ -17,6 +17,10 @@
                     </x-nav-link>
                 </div>
             </div>
+            <div style="margin-top: 20px;">
+                <p><a href="/home">ホームへ</a></p>
+            </div>
+
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ml-6">
