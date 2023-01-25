@@ -66,12 +66,15 @@
 33. プロンプトでnpm run dev  
 34. ユーザー名、登録、ログイン、ログアウト機能 トップページへ追加  
 35. 登録、ログイン、ログアウト後のルート先変更  
-36. ユーザーごとの表示調整  blade,Controller,Model(リレーション追加)  
-37. タグ追加 (Model, maigration, seeder)  
-38. index.blade.php , TodoController　修正  
-39. 検索画面追加  
-40. FindController追加  
-41. 検索ロジック作成  
-42. CSS作成  
+36. todosテーブルにuser_id追加
+37. ユーザーごとの表示調整  blade,Controller,Model(リレーション追加)  
+38. タグ追加 (Model, maigration, seeder)  
+39. todosテーブルに tag_id 追加し seed 実施無くす  
+40. TagsTableSeeder実施
+41. index.blade.php , TodoController　修正  
+42. 検索画面追加  
+43. FindController追加  
+44. 検索ロジック作成 (ユーザーごとの表示＋内容あいまい検索＋タグ検索)  
+45. CSS作成  
 
 
