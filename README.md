@@ -59,6 +59,7 @@
 25. Pagination 実装  (php artisan vendor:publish --tag=laravel-pagination)
 26. TodoController (index) 記述  
 27. CSS作成  
+  
 28. web.php 書き換わるからメモしておく  
 29. Node.js インストール(ホームページでダウンロード)  
 30. laravel/breeze インストール(ターミナル)  
@@ -79,5 +80,15 @@
 45. FindController追加  
 46. 検索ロジック作成 (ユーザーごとの表示＋内容あいまい検索＋タグ検索)  
 47. CSS作成  
-48. レスポンシブデザイン （ブレークポイント 768px）
+48. レスポンシブデザイン （ブレークポイント 768px）  
+  
+49. clone作成  
+50. composer install  
+51. npm install  
+52. .env作成  
+53. mysql DB作成  
+54. php artisan migrate実行  
+55. php artisan db:seed実行  
+56. php artisan serve確認  
+
 
